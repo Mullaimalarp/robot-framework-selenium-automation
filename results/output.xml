@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.9.13 on win32)" generated="2026-10-30T14:06:35.679972" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Projects\robot-framework-selenium-automation\tests">
+<suite id="s1-s1" name="Login Tests" source="C:\Projects\robot-framework-selenium-automation\tests\login_tests.robot">
+<kw name="Open Test Browser" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:36.164060" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-10-30T14:06:36.164060" elapsed="3.201481"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.365541" elapsed="0.029731"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.395272" elapsed="0.004554"/>
+</kw>
+<arg>${BASE_URL}</arg>
+<status status="PASS" start="2026-10-30T14:06:36.164060" elapsed="3.235766"/>
+</kw>
+<test id="s1-s1-t1" name="Valid User Can Log In" line="14">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-10-30T14:06:39.401069" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.401069" elapsed="0.044906"/>
+</kw>
+<kw name="Login Page Should Be Displayed" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.445975" elapsed="0.138088"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:39.598433" level="INFO">Element 'id=login-button' is displayed.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.584063" elapsed="0.014370"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:39.445975" elapsed="0.162227"/>
+</kw>
+<kw name="Login With Credentials" owner="login_page">
+<kw name="Enter Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:39.610620" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.608202" elapsed="0.138762"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-10-30T14:06:39.608202" elapsed="0.138762"/>
+</kw>
+<kw name="Enter Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:39.746964" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-10-30T14:06:39.779682" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.746964" elapsed="0.089951"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-10-30T14:06:39.746964" elapsed="0.089951"/>
+</kw>
+<kw name="Click Login Button" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:39.836915" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.836915" elapsed="0.101547"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:39.836915" elapsed="0.101547"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-10-30T14:06:39.608202" elapsed="0.330260"/>
+</kw>
+<kw name="Products Page Should Be Displayed" owner="products_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INVENTORY_CONTAINER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:39.938462" elapsed="0.080259"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.018721" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${PRODUCTS_TITLE}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.018721" elapsed="0.036302"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.065606" level="INFO">Current location contains 'inventory.html'.</msg>
+<arg>inventory.html</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.055023" elapsed="0.010583"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.096472" level="INFO">Element 'css=.shopping_cart_link' is displayed.</msg>
+<arg>${SHOPPING_CART}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.065606" elapsed="0.030866"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:39.938462" elapsed="0.158010"/>
+</kw>
+<tag>login</tag>
+<tag>positive</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2026-10-30T14:06:39.400443" elapsed="0.696029"/>
+</test>
+<test id="s1-s1-t2" name="Invalid User Cannot Log In" line="20">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-10-30T14:06:40.096472" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.096472" elapsed="0.064842"/>
+</kw>
+<kw name="Login Page Should Be Displayed" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.162625" elapsed="0.019498"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.197191" level="INFO">Element 'id=login-button' is displayed.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.182123" elapsed="0.015068"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:40.161314" elapsed="0.035877"/>
+</kw>
+<kw name="Login With Credentials" owner="login_page">
+<kw name="Enter Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.197191" level="INFO">Typing text 'invalid_user' into text field 'id=user-name'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.197191" elapsed="0.090735"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2026-10-30T14:06:40.197191" elapsed="0.090735"/>
+</kw>
+<kw name="Enter Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.287926" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-10-30T14:06:40.318210" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.287926" elapsed="0.089353"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2026-10-30T14:06:40.287926" elapsed="0.089353"/>
+</kw>
+<kw name="Click Login Button" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.379490" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.379490" elapsed="0.063833"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:40.377279" elapsed="0.066044"/>
+</kw>
+<arg>${INVALID_USERNAME}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2026-10-30T14:06:40.197191" elapsed="0.246132"/>
+</kw>
+<kw name="Login Error Should Be" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.445329" elapsed="0.018811"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-10-30T14:06:40.464883" level="INFO">Verifying element 'css=[data-test="error"]' contains exact text 'Epic sadface: Username and password do not match any user in this service'.</msg>
+<arg>${LOGIN_ERROR}</arg>
+<arg>${expected_message}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.464883" elapsed="0.015442"/>
+</kw>
+<arg>${INVALID_LOGIN_ERROR}</arg>
+<status status="PASS" start="2026-10-30T14:06:40.443323" elapsed="0.037002"/>
+</kw>
+<tag>login</tag>
+<tag>negative</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-10-30T14:06:40.096472" elapsed="0.383853"/>
+</test>
+<kw name="Close Test Browser" owner="common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-10-30T14:06:40.480325" elapsed="2.164738"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:40.480325" elapsed="2.164738"/>
+</kw>
+<status status="PASS" start="2026-10-30T14:06:35.726304" elapsed="6.918759"/>
+</suite>
+<suite id="s1-s2" name="Product Tests" source="C:\Projects\robot-framework-selenium-automation\tests\product_tests.robot">
+<kw name="Open Test Browser" type="SETUP">
+<msg time="2026-10-30T14:06:42.681922" level="FAIL">No keyword with name 'Open Test Browser' found.</msg>
+<arg>${BASE_URL}</arg>
+<status status="FAIL" start="2026-10-30T14:06:42.681922" elapsed="0.000000">No keyword with name 'Open Test Browser' found.</status>
+</kw>
+<test id="s1-s2-t1" name="Verify Products Page After Login" line="13">
+<tag>products</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-10-30T14:06:42.681922" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Open Test Browser' found.</status>
+</test>
+<kw name="Close Test Browser" type="TEARDOWN">
+<msg time="2026-10-30T14:06:42.689281" level="FAIL">No keyword with name 'Close Test Browser' found.</msg>
+<status status="FAIL" start="2026-10-30T14:06:42.689281" elapsed="0.000000">No keyword with name 'Close Test Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-10-30T14:06:42.645063" elapsed="0.044218">Suite setup failed:
+No keyword with name 'Open Test Browser' found.
+
+Also suite teardown failed:
+No keyword with name 'Close Test Browser' found.</status>
+</suite>
+<status status="FAIL" start="2026-10-30T14:06:35.679972" elapsed="7.018676"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">negative</stat>
+<stat pass="1" fail="0" skip="0">positive</stat>
+<stat pass="0" fail="1" skip="0">products</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="2" fail="1" skip="0">Tests</stat>
+<stat name="Login Tests" id="s1-s1" pass="2" fail="0" skip="0">Tests.Login Tests</stat>
+<stat name="Product Tests" id="s1-s2" pass="0" fail="1" skip="0">Tests.Product Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-10-30T14:06:42.649691" level="ERROR">Error in file 'C:\Projects\robot-framework-selenium-automation\tests\product_tests.robot' on line 2: Resource file '..\resources\common.robot' does not exist.</msg>
+<msg time="2026-10-30T14:06:42.665386" level="ERROR">Error in file 'C:\Projects\robot-framework-selenium-automation\tests\product_tests.robot' on line 3: Resource file '..\resources\pages\LoginPage.robot' does not exist.</msg>
+<msg time="2026-10-30T14:06:42.668777" level="ERROR">Error in file 'C:\Projects\robot-framework-selenium-automation\tests\product_tests.robot' on line 4: Resource file '..\resources\pages\ProductsPage.robot' does not exist.</msg>
+</errors>
+</robot>
