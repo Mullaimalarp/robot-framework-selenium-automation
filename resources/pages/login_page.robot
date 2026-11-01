@@ -10,6 +10,14 @@ ${LOGIN_ERROR}        css=[data-test="error"]
 
 
 *** Keywords ***
+Login With Valid User
+    Input Text      id:user-name    ${VALID_USERNAME}
+    Input Text      id:password     ${VALID_PASSWORD}
+    Click Button    id:login-button
+    # Ensure navigation finishes before returning
+    Wait Until Location Contains    inventory.html    timeout=10s
+    Wait Until Element Is Visible   css:.title        timeout=10s
+
 Login Page Should Be Displayed
     Wait Until Element Is Visible    ${USERNAME_INPUT}
     Element Should Be Visible    ${LOGIN_BUTTON}

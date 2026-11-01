@@ -15,4 +15,24 @@ Products Page Should Be Displayed
     Location Should Contain    inventory.html
     Element Should Be Visible    ${SHOPPING_CART}
 
+Add Backpack To Cart
+    Wait Until Element Is Visible
+    ...    id:add-to-cart-sauce-labs-backpack
+    ...    timeout=10s
 
+    Click Button    id:add-to-cart-sauce-labs-backpack
+
+Purchase Sauce Labs Backpack
+    [Tags]    functional    checkout    purchase
+
+    Add Backpack To Cart
+    Open Shopping Cart
+    Click Checkout
+
+    Enter Checkout Information
+    ...    Mullaimalar
+    ...    Sekar
+    ...    3026
+
+    Complete Purchase
+    Verify Purchase Successful
